@@ -1,0 +1,30 @@
+﻿variable,label
+comm_consent,Consent
+comm_indication,Indication
+checklist_signin,Sign-in
+checklist_timeout,Time-out
+checklist_signout,Sign-out
+prep_preop,Pre-operative anaesthetic assessment
+prep_hb,Checks recent Hb level
+prep_machine,Anaesthetic machine checked
+prep_gadrugs,Check availability of GA drugs checked
+prep_airwaychecked,Airway equipment checked
+prep_suction,Suction present & working
+prep_vasopressor,Vasopressor present
+prep_ivaccess,Obtains IV access
+prep_fluids,Attaches running fluids
+spinal_hat,Wears hat
+spinal_mask,Wears mask
+spinal_gloves,Wears sterile gloves
+spinal_clean,Uses cleaning solution
+spinal_sterile,Maintains sterile field 
+spinal_wedge,Applies tilt or wedge after spinal
+spinal_vitals,Monitors vital signs after spinal
+spinal_height,Measures block height
+spinal_vasopressor,Administers vasopressor when appropriate 
+spinal_abx,Administers/confirms IV antibiotics
+spinal_oxytocin,Administers oxytocin
+spinal_oxytocintime,Oxytocin administered at correct time
+spinal_present,Remains present in theatre
+prep_neonatal,Confirms neonatal equipment available
+adverse_persistent_hypo,Persistent hypotension

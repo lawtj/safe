@@ -1,0 +1,617 @@
+{smcl}
+{com}{sf}{ul off}{txt}{.-}
+      name:  {res}<unnamed>
+       {txt}log:  {res}C:\Users\tyler\Downloads\SAFE\equipment odds ratio.smcl
+  {txt}log type:  {res}smcl
+ {txt}opened on:  {res}20 Sep 2021, 10:06:57
+
+{com}. do "C:\Users\tyler\AppData\Local\Temp\STD414c_000000.tmp"
+{txt}
+{com}. 
+. foreach i of varlist equipment_monitoring___4 equipment_airway___2 equipment_airway___4 equipment_airway___6 equipment_airway___7 equipment_drugs___3 equipment_drugs___6 {c -(}
+{txt}  2{com}.         tabodds `i' phase if phase != 4, or
+{txt}  3{com}.         melogit `i' i.phase if phase != 4 || hospital: || anesthetist_id:, base or noasis
+{txt}  4{com}. {c )-}
+
+{txt}{hline 13}{c TT}{hline 61}
+       phase {c |}  Odds Ratio       chi2       P>chi2     [95% Conf. Interval]
+{hline 13}{c +}{hline 61}
+{col 5}Pre-SAFE {c |}  {res}{col 6}         .{col 31}      .{col 45}    .{col 55}         .{col 66}         .
+{txt}{col 4}Immedia~E {c |}  {res}{col 6}         .{col 31}  48.01{col 45}0.0000{col 55}         .{col 66}         .
+{txt}{col 4}6 month~E {c |}  {res}{col 6}         .{col 31} 103.12{col 45}0.0000{col 55}         .{col 66}         .
+{txt}{col 4}12-mo p~E {c |}  {res}{col 6}         .{col 31}  53.70{col 45}0.0000{col 55}         .{col 66}         .
+{txt}{hline 13}{c BT}{hline 61}
+Test of homogeneity (equal odds): chi2({res}3{txt})  = {res}  101.62
+                                  {txt}Pr>chi2  = {res}  0.0000
+
+{txt}Score test for trend of odds:     chi2({res}1{txt})  = {res}   50.42
+                                  {txt}Pr>chi2  = {res}  0.0000
+{txt}note: 1.phase != 0 predicts failure perfectly
+      1.phase dropped and 100 obs not used
+
+note: 5.phase omitted because of collinearity
+
+Fitting fixed-effects model:
+
+Iteration 0:{space 3}log likelihood = {res:-143.68307}  
+Iteration 1:{space 3}log likelihood = {res: -143.4624}  
+Iteration 2:{space 3}log likelihood = {res:-143.46229}  
+Iteration 3:{space 3}log likelihood = {res:-143.46229}  
+
+Refining starting values:
+
+Grid node 0:{space 3}log likelihood = {res:-87.297054}
+
+Fitting full model:
+{res}
+{txt}Iteration 0:{space 3}log likelihood = {res:-87.297054}  
+Iteration 1:{space 3}log likelihood = {res:-76.173443}  
+Iteration 2:{space 3}log likelihood = {res:-71.543947}  
+Iteration 3:{space 3}log likelihood = {res:-69.215758}  
+Iteration 4:{space 3}log likelihood = {res:-68.716741}  
+Iteration 5:{space 3}log likelihood = {res:-68.670244}  
+Iteration 6:{space 3}log likelihood = {res:-68.633538}  
+Iteration 7:{space 3}log likelihood = {res:-68.651365}  
+Iteration 8:{space 3}log likelihood = {res:-68.645863}  
+Iteration 9:{space 3}log likelihood = {res:-68.652176}  
+Iteration 10:{space 2}log likelihood = {res:-68.651283}  
+Iteration 11:{space 2}log likelihood = {res:-68.652573}  
+Iteration 12:{space 2}log likelihood = {res:-68.652509}  
+Iteration 13:{space 2}log likelihood = {res:-68.652772}  
+Iteration 14:{space 2}log likelihood = {res:-68.652781}  
+Iteration 15:{space 2}log likelihood = {res:-68.652835}  
+Iteration 16:{space 2}log likelihood = {res:-68.652841}  
+{res}
+{txt}Mixed-effects logistic regression{col 49}{txt}Number of obs{col 67}={res}{col 69}       220
+
+{txt}{hline 16}{c TT}{hline 44}
+{col 17}{txt}{c |}{col 23}No. of{col 36}Observations per Group
+{col 2}{txt}Group Variable{col 17}{c |}{col 23}Groups{col 33}Minimum{col 44}Average{col 55}Maximum
+{txt}{hline 16}{c +}{hline 44}
+{col 8}{res}hospital{col 17}{txt}{c |}{res}{col 21}       5{col 31}       16{col 42}     44.0{col 53}      114
+{col 4}{res}anesthetis~d{col 17}{txt}{c |}{res}{col 21}      23{col 31}        1{col 42}      9.6{col 53}       31
+{txt}{hline 16}{c BT}{hline 44}
+
+{txt}Integration method: {col 21}{res}mvaghermite{col 49}{txt}Integration pts.{col 67}={col 78}{res}7
+
+{col 49}{txt}Wald chi2({res}2{txt}){col 67}={res}{col 70}    12.89
+{txt}Log likelihood = {res}-68.652841{col 49}{txt}Prob > chi2{col 67}={res}{col 73}0.0016
+{txt}{hline 24}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}equipment_monitoring_~4{col 25}{c |} Odds Ratio{col 37}   Std. Err.{col 49}      z{col 57}   P>|z|{col 65}     [95% Con{col 78}f. Interval]
+{hline 24}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 18}phase {c |}
+{space 14}Pre-SAFE  {c |}{col 25}{res}{space 2}        1{col 37}{txt}  (empty)
+{space 1}Immediately post SAFE  {c |}{col 25}{res}{space 2} .0398561{col 37}{space 2} .0382582{col 48}{space 1}   -3.36{col 57}{space 3}0.001{col 65}{space 4} .0060732{col 78}{space 3} .2615594
+{txt}{space 4}6 months post SAFE  {c |}{col 25}{res}{space 2} .2714035{col 37}{space 2} .2328889{col 48}{space 1}   -1.52{col 57}{space 3}0.129{col 65}{space 4} .0504902{col 78}{space 3} 1.458894
+{txt}{space 7}12-mo post SAFE  {c |}{col 25}{res}{space 2}        1{col 37}{txt}  (omitted)
+{space 23} {c |}
+{space 18}_cons {c |}{col 25}{res}{space 2} .1907179{col 37}{space 2} .5122798{col 48}{space 1}   -0.62{col 57}{space 3}0.537{col 65}{space 4} .0009863{col 78}{space 3} 36.87823
+{txt}{hline 24}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}{res}hospital               {col 25}{txt}{c |}
+{space 14}var(_cons){c |}{col 25}{res}{space 2} 23.03886{col 37}{space 2} 20.50966{col 65}{space 4}  4.02443{col 78}{space 3} 131.8918
+{txt}{hline 24}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}{res}hospital>anesthetist_id{col 25}{txt}{c |}
+{space 14}var(_cons){c |}{col 25}{res}{space 2} 22.55015{col 37}{space 2} 21.66658{col 65}{space 4} 3.430046{col 78}{space 3} 148.2514
+{txt}{hline 24}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{p 0 6 2}Note: {help eform_option:Estimates are transformed} only in the first equation.{p_end}
+{p 0 6 2}Note: {res:_cons} estimates baseline odds (conditional on zero random effects){txt}.{p_end}
+{txt}LR test vs. logistic model: {txt}chi2({res}2{txt}) ={res} 149.62{col 59}{txt}Prob > chi2 ={res}{col 73}0.0000
+
+{txt}{p 0 6 4 79}Note: {help j_mixedlr##|_new:LR test is conservative} and provided only for reference.{p_end}
+
+{hline 13}{c TT}{hline 61}
+       phase {c |}  Odds Ratio       chi2       P>chi2     [95% Conf. Interval]
+{hline 13}{c +}{hline 61}
+{col 5}Pre-SAFE {c |}  {res}{col 6}  1.000000{col 31}      .{col 45}    .{col 55}         .{col 66}         .
+{txt}{col 4}Immedia~E {c |}  {res}{col 6} 10.876404{col 31}   7.68{col 45}0.0056{col 55}  1.308874{col 66} 90.380105
+{txt}{col 4}6 month~E {c |}  {res}{col 6}  1.251404{col 31}   0.21{col 45}0.6471{col 55}  0.478078{col 66}  3.275641
+{txt}{col 4}12-mo p~E {c |}  {res}{col 6}         .{col 31}   5.09{col 45}0.0241{col 55}         .{col 66}         .
+{txt}{hline 13}{c BT}{hline 61}
+Test of homogeneity (equal odds): chi2({res}3{txt})  = {res}   11.85
+                                  {txt}Pr>chi2  = {res}  0.0079
+
+{txt}Score test for trend of odds:     chi2({res}1{txt})  = {res}    3.43
+                                  {txt}Pr>chi2  = {res}  0.0639
+{txt}note: 5.phase != 0 predicts success perfectly
+      5.phase dropped and 43 obs not used
+
+
+Fitting fixed-effects model:
+
+Iteration 0:{space 3}log likelihood = {res:-72.346188}  
+Iteration 1:{space 3}log likelihood = {res:-67.331304}  
+Iteration 2:{space 3}log likelihood = {res:-67.028651}  
+Iteration 3:{space 3}log likelihood = {res:-67.025891}  
+Iteration 4:{space 3}log likelihood = {res: -67.02589}  
+
+Refining starting values:
+
+Grid node 0:{space 3}log likelihood = {res:-65.162282}
+
+Fitting full model:
+{res}
+{txt}Iteration 0:{space 3}log likelihood = {res:-65.162282}  
+Iteration 1:{space 3}log likelihood = {res:-64.451333}  
+Iteration 2:{space 3}log likelihood = {res:-63.987815}  
+Iteration 3:{space 3}log likelihood = {res:-63.941678}  
+Iteration 4:{space 3}log likelihood = {res:-63.939953}  
+Iteration 5:{space 3}log likelihood = {res:-63.939951}  
+{res}
+{txt}Mixed-effects logistic regression{col 49}{txt}Number of obs{col 67}={res}{col 69}       277
+
+{txt}{hline 16}{c TT}{hline 44}
+{col 17}{txt}{c |}{col 23}No. of{col 36}Observations per Group
+{col 2}{txt}Group Variable{col 17}{c |}{col 23}Groups{col 33}Minimum{col 44}Average{col 55}Maximum
+{txt}{hline 16}{c +}{hline 44}
+{col 8}{res}hospital{col 17}{txt}{c |}{res}{col 21}       5{col 31}       25{col 42}     55.4{col 53}      130
+{col 4}{res}anesthetis~d{col 17}{txt}{c |}{res}{col 21}      35{col 31}        1{col 42}      7.9{col 53}       25
+{txt}{hline 16}{c BT}{hline 44}
+
+{txt}Integration method: {col 21}{res}mvaghermite{col 49}{txt}Integration pts.{col 67}={col 78}{res}7
+
+{col 49}{txt}Wald chi2({res}2{txt}){col 67}={res}{col 70}     5.39
+{txt}Log likelihood = {res}-63.939951{col 49}{txt}Prob > chi2{col 67}={res}{col 73}0.0675
+{txt}{hline 24}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}   equipment_airway___2{col 25}{c |} Odds Ratio{col 37}   Std. Err.{col 49}      z{col 57}   P>|z|{col 65}     [95% Con{col 78}f. Interval]
+{hline 24}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 18}phase {c |}
+{space 14}Pre-SAFE  {c |}{col 25}{res}{space 2}        1{col 37}{txt}  (base)
+{space 1}Immediately post SAFE  {c |}{col 25}{res}{space 2} 10.88355{col 37}{space 2} 11.86775{col 48}{space 1}    2.19{col 57}{space 3}0.029{col 65}{space 4} 1.284087{col 78}{space 3} 92.24577
+{txt}{space 4}6 months post SAFE  {c |}{col 25}{res}{space 2}   .85831{col 37}{space 2} .5075261{col 48}{space 1}   -0.26{col 57}{space 3}0.796{col 65}{space 4} .2693527{col 78}{space 3} 2.735061
+{txt}{space 7}12-mo post SAFE  {c |}{col 25}{res}{space 2}        1{col 37}{txt}  (empty)
+{space 23} {c |}
+{space 18}_cons {c |}{col 25}{res}{space 2} 17.08469{col 37}{space 2} 13.45027{col 48}{space 1}    3.61{col 57}{space 3}0.000{col 65}{space 4} 3.651585{col 78}{space 3} 79.93421
+{txt}{hline 24}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}{res}hospital               {col 25}{txt}{c |}
+{space 14}var(_cons){c |}{col 25}{res}{space 2} 1.099853{col 37}{space 2} 1.468939{col 65}{space 4} .0802582{col 78}{space 3} 15.07233
+{txt}{hline 24}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}{res}hospital>anesthetist_id{col 25}{txt}{c |}
+{space 14}var(_cons){c |}{col 25}{res}{space 2} .3669474{col 37}{space 2} .7548061{col 65}{space 4} .0065117{col 78}{space 3} 20.67828
+{txt}{hline 24}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{p 0 6 2}Note: {help eform_option:Estimates are transformed} only in the first equation.{p_end}
+{p 0 6 2}Note: {res:_cons} estimates baseline odds (conditional on zero random effects){txt}.{p_end}
+{txt}LR test vs. logistic model: {txt}chi2({res}2{txt}) ={res} 6.17{col 59}{txt}Prob > chi2 ={res}{col 73}0.0457
+
+{txt}{p 0 6 4 79}Note: {help j_mixedlr##|_new:LR test is conservative} and provided only for reference.{p_end}
+
+{hline 13}{c TT}{hline 61}
+       phase {c |}  Odds Ratio       chi2       P>chi2     [95% Conf. Interval]
+{hline 13}{c +}{hline 61}
+{col 5}Pre-SAFE {c |}  {res}{col 6}  1.000000{col 31}      .{col 45}    .{col 55}         .{col 66}         .
+{txt}{col 4}Immedia~E {c |}  {res}{col 6}  4.833333{col 31}   4.73{col 45}0.0296{col 55}  1.005021{col 66} 23.244391
+{txt}{col 4}6 month~E {c |}  {res}{col 6}  9.777778{col 31}   6.73{col 45}0.0095{col 55}  1.173230{col 66} 81.488673
+{txt}{col 4}12-mo p~E {c |}  {res}{col 6}         .{col 31}   4.59{col 45}0.0321{col 55}         .{col 66}         .
+{txt}{hline 13}{c BT}{hline 61}
+Test of homogeneity (equal odds): chi2({res}3{txt})  = {res}   13.59
+                                  {txt}Pr>chi2  = {res}  0.0035
+
+{txt}Score test for trend of odds:     chi2({res}1{txt})  = {res}    9.14
+                                  {txt}Pr>chi2  = {res}  0.0025
+{txt}note: 5.phase != 0 predicts success perfectly
+      5.phase dropped and 43 obs not used
+
+
+Fitting fixed-effects model:
+
+Iteration 0:{space 3}log likelihood = {res: -55.96951}  
+Iteration 1:{space 3}log likelihood = {res:-47.737732}  
+Iteration 2:{space 3}log likelihood = {res:-47.538665}  
+Iteration 3:{space 3}log likelihood = {res:-47.536773}  
+Iteration 4:{space 3}log likelihood = {res:-47.536772}  
+
+Refining starting values:
+
+Grid node 0:{space 3}log likelihood = {res:-46.940203}
+
+Fitting full model:
+{res}
+{txt}Iteration 0:{space 3}log likelihood = {res:-46.940203}  (not concave)
+Iteration 1:{space 3}log likelihood = {res:-46.502629}  
+Iteration 2:{space 3}log likelihood = {res:-46.113103}  
+Iteration 3:{space 3}log likelihood = {res:-46.065009}  
+Iteration 4:{space 3}log likelihood = {res:-46.064482}  
+Iteration 5:{space 3}log likelihood = {res:-46.064483}  
+{res}
+{txt}Mixed-effects logistic regression{col 49}{txt}Number of obs{col 67}={res}{col 69}       277
+
+{txt}{hline 16}{c TT}{hline 44}
+{col 17}{txt}{c |}{col 23}No. of{col 36}Observations per Group
+{col 2}{txt}Group Variable{col 17}{c |}{col 23}Groups{col 33}Minimum{col 44}Average{col 55}Maximum
+{txt}{hline 16}{c +}{hline 44}
+{col 8}{res}hospital{col 17}{txt}{c |}{res}{col 21}       5{col 31}       25{col 42}     55.4{col 53}      130
+{col 4}{res}anesthetis~d{col 17}{txt}{c |}{res}{col 21}      35{col 31}        1{col 42}      7.9{col 53}       25
+{txt}{hline 16}{c BT}{hline 44}
+
+{txt}Integration method: {col 21}{res}mvaghermite{col 49}{txt}Integration pts.{col 67}={col 78}{res}7
+
+{col 49}{txt}Wald chi2({res}2{txt}){col 67}={res}{col 70}     4.90
+{txt}Log likelihood = {res}-46.064483{col 49}{txt}Prob > chi2{col 67}={res}{col 73}0.0861
+{txt}{hline 24}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}   equipment_airway___4{col 25}{c |} Odds Ratio{col 37}   Std. Err.{col 49}      z{col 57}   P>|z|{col 65}     [95% Con{col 78}f. Interval]
+{hline 24}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 18}phase {c |}
+{space 14}Pre-SAFE  {c |}{col 25}{res}{space 2}        1{col 37}{txt}  (base)
+{space 1}Immediately post SAFE  {c |}{col 25}{res}{space 2} 5.368246{col 37}{space 2} 5.141048{col 48}{space 1}    1.75{col 57}{space 3}0.079{col 65}{space 4} .8215912{col 78}{space 3} 35.07591
+{txt}{space 4}6 months post SAFE  {c |}{col 25}{res}{space 2}  11.0981{col 37}{space 2} 14.36161{col 48}{space 1}    1.86{col 57}{space 3}0.063{col 65}{space 4} .8785013{col 78}{space 3} 140.2021
+{txt}{space 7}12-mo post SAFE  {c |}{col 25}{res}{space 2}        1{col 37}{txt}  (empty)
+{space 23} {c |}
+{space 18}_cons {c |}{col 25}{res}{space 2} 20.78103{col 37}{space 2} 19.68025{col 48}{space 1}    3.20{col 57}{space 3}0.001{col 65}{space 4} 3.247537{col 78}{space 3} 132.9781
+{txt}{hline 24}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}{res}hospital               {col 25}{txt}{c |}
+{space 14}var(_cons){c |}{col 25}{res}{space 2} .5342769{col 37}{space 2} 1.208195{col 65}{space 4} .0063517{col 78}{space 3} 44.94105
+{txt}{hline 24}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}{res}hospital>anesthetist_id{col 25}{txt}{c |}
+{space 14}var(_cons){c |}{col 25}{res}{space 2} 1.757211{col 37}{space 2} 2.405751{col 65}{space 4} .1200789{col 78}{space 3} 25.71468
+{txt}{hline 24}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{p 0 6 2}Note: {help eform_option:Estimates are transformed} only in the first equation.{p_end}
+{p 0 6 2}Note: {res:_cons} estimates baseline odds (conditional on zero random effects){txt}.{p_end}
+{txt}LR test vs. logistic model: {txt}chi2({res}2{txt}) ={res} 2.94{col 59}{txt}Prob > chi2 ={res}{col 73}0.2294
+
+{txt}{p 0 6 4 79}Note: {help j_mixedlr##|_new:LR test is conservative} and provided only for reference.{p_end}
+
+{hline 13}{c TT}{hline 61}
+       phase {c |}  Odds Ratio       chi2       P>chi2     [95% Conf. Interval]
+{hline 13}{c +}{hline 61}
+{col 5}Pre-SAFE {c |}  {res}{col 6}  1.000000{col 31}      .{col 45}    .{col 55}         .{col 66}         .
+{txt}{col 4}Immedia~E {c |}  {res}{col 6}  5.993590{col 31}  12.10{col 45}0.0005{col 55}  1.899054{col 66} 18.916325
+{txt}{col 4}6 month~E {c |}  {res}{col 6}  3.304029{col 31}   7.20{col 45}0.0073{col 55}  1.309407{col 66}  8.337065
+{txt}{col 4}12-mo p~E {c |}  {res}{col 6}  2.750000{col 31}   3.24{col 45}0.0720{col 55}  0.870984{col 66}  8.682708
+{txt}{hline 13}{c BT}{hline 61}
+Test of homogeneity (equal odds): chi2({res}3{txt})  = {res}   16.40
+                                  {txt}Pr>chi2  = {res}  0.0009
+
+{txt}Score test for trend of odds:     chi2({res}1{txt})  = {res}    5.06
+                                  {txt}Pr>chi2  = {res}  0.0245
+{txt}
+Fitting fixed-effects model:
+
+Iteration 0:{space 3}log likelihood = {res:-109.37625}  
+Iteration 1:{space 3}log likelihood = {res:-106.82446}  
+Iteration 2:{space 3}log likelihood = {res:-106.78648}  
+Iteration 3:{space 3}log likelihood = {res:-106.78646}  
+Iteration 4:{space 3}log likelihood = {res:-106.78646}  
+
+Refining starting values:
+
+Grid node 0:{space 3}log likelihood = {res:-75.101159}
+
+Fitting full model:
+{res}
+{txt}Iteration 0:{space 3}log likelihood = {res:-75.101159}  (not concave)
+Iteration 1:{space 3}log likelihood = {res:-74.333965}  
+Iteration 2:{space 3}log likelihood = {res:-74.008314}  (backed up)
+Iteration 3:{space 3}log likelihood = {res:-73.728057}  (not concave)
+Iteration 4:{space 3}log likelihood = {res:-73.714054}  (not concave)
+Iteration 5:{space 3}log likelihood = {res:-73.708449}  (not concave)
+Iteration 6:{space 3}log likelihood = {res:-73.703962}  (not concave)
+Iteration 7:{space 3}log likelihood = {res:-73.703738}  (not concave)
+Iteration 8:{space 3}log likelihood = {res:-73.703559}  (not concave)
+Iteration 9:{space 3}log likelihood = {res:-73.703556}  (not concave)
+Iteration 10:{space 2}log likelihood = {res:-73.703555}  (not concave)
+Iteration 11:{space 2}log likelihood = {res:-73.703555}  (not concave)
+Iteration 12:{space 2}log likelihood = {res:-73.703555}  (not concave)
+Iteration 13:{space 2}log likelihood = {res:-73.703555}  (not concave)
+Iteration 14:{space 2}log likelihood = {res:-73.703555}  (not concave)
+Iteration 15:{space 2}log likelihood = {res:-73.703555}  (not concave)
+Iteration 16:{space 2}log likelihood = {res:-73.703555}  (backed up)
+Iteration 17:{space 2}log likelihood = {res:-73.703555}  (backed up)
+Iteration 18:{space 2}log likelihood = {res:-73.703555}  (not concave)
+Iteration 19:{space 2}log likelihood = {res:-73.703555}  (not concave)
+Iteration 20:{space 2}log likelihood = {res:-73.703555}  (not concave)
+Iteration 21:{space 2}log likelihood = {res:-73.703555}  (not concave)
+Iteration 22:{space 2}log likelihood = {res:-73.703555}  (not concave)
+Iteration 23:{space 2}log likelihood = {res:-73.703555}  (not concave)
+Iteration 24:{space 2}log likelihood = {res:-73.703555}  
+Iteration 25:{space 2}log likelihood = {res:-73.703555}  (backed up)
+Iteration 26:{space 2}log likelihood = {res:-73.703554}  (not concave)
+Iteration 27:{space 2}log likelihood = {res:-73.703554}  
+Iteration 28:{space 2}log likelihood = {res:-73.703554}  (backed up)
+Iteration 29:{space 2}log likelihood = {res: -73.70355}  (backed up)
+Iteration 30:{space 2}log likelihood = {res:-73.703541}  (not concave)
+Iteration 31:{space 2}log likelihood = {res:-73.703541}  (not concave)
+Iteration 32:{space 2}log likelihood = {res: -73.70354}  (not concave)
+Iteration 33:{space 2}log likelihood = {res:-73.703539}  
+Iteration 34:{space 2}log likelihood = {res:-73.703521}  (not concave)
+Iteration 35:{space 2}log likelihood = {res:-73.703514}  (not concave)
+Iteration 36:{space 2}log likelihood = {res:-73.703502}  (not concave)
+Iteration 37:{space 2}log likelihood = {res:-73.703493}  
+Iteration 38:{space 2}log likelihood = {res: -73.70236}  (not concave)
+Iteration 39:{space 2}log likelihood = {res:-73.702247}  (not concave)
+Iteration 40:{space 2}log likelihood = {res:-73.702156}  (not concave)
+Iteration 41:{space 2}log likelihood = {res:-73.701577}  (not concave)
+Iteration 42:{space 2}log likelihood = {res:-73.699724}  (not concave)
+Iteration 43:{space 2}log likelihood = {res:-73.699354}  
+Iteration 44:{space 2}log likelihood = {res:-73.559048}  (not concave)
+Iteration 45:{space 2}log likelihood = {res:-73.552059}  (not concave)
+Iteration 46:{space 2}log likelihood = {res:-73.529816}  (not concave)
+Iteration 47:{space 2}log likelihood = {res:-73.512104}  
+Iteration 48:{space 2}log likelihood = {res: -71.86477}  
+Iteration 49:{space 2}log likelihood = {res:-71.506496}  
+Iteration 50:{space 2}log likelihood = {res: -71.49675}  
+Iteration 51:{space 2}log likelihood = {res:-71.459878}  
+Iteration 52:{space 2}log likelihood = {res:-71.459399}  
+Iteration 53:{space 2}log likelihood = {res:  -71.4594}  
+{res}
+{txt}Mixed-effects logistic regression{col 49}{txt}Number of obs{col 67}={res}{col 69}       320
+
+{txt}{hline 16}{c TT}{hline 44}
+{col 17}{txt}{c |}{col 23}No. of{col 36}Observations per Group
+{col 2}{txt}Group Variable{col 17}{c |}{col 23}Groups{col 33}Minimum{col 44}Average{col 55}Maximum
+{txt}{hline 16}{c +}{hline 44}
+{col 8}{res}hospital{col 17}{txt}{c |}{res}{col 21}       5{col 31}       33{col 42}     64.0{col 53}      146
+{col 4}{res}anesthetis~d{col 17}{txt}{c |}{res}{col 21}      35{col 31}        1{col 42}      9.1{col 53}       31
+{txt}{hline 16}{c BT}{hline 44}
+
+{txt}Integration method: {col 21}{res}mvaghermite{col 49}{txt}Integration pts.{col 67}={col 78}{res}7
+
+{col 49}{txt}Wald chi2({res}3{txt}){col 67}={res}{col 70}    10.80
+{txt}Log likelihood = {res}  -71.4594{col 49}{txt}Prob > chi2{col 67}={res}{col 73}0.0128
+{txt}{hline 24}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}   equipment_airway___6{col 25}{c |} Odds Ratio{col 37}   Std. Err.{col 49}      z{col 57}   P>|z|{col 65}     [95% Con{col 78}f. Interval]
+{hline 24}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 18}phase {c |}
+{space 14}Pre-SAFE  {c |}{col 25}{res}{space 2}        1{col 37}{txt}  (base)
+{space 1}Immediately post SAFE  {c |}{col 25}{res}{space 2} 7.636744{col 37}{space 2}  5.41183{col 48}{space 1}    2.87{col 57}{space 3}0.004{col 65}{space 4} 1.904138{col 78}{space 3} 30.62795
+{txt}{space 4}6 months post SAFE  {c |}{col 25}{res}{space 2} 3.739973{col 37}{space 2} 2.388751{col 48}{space 1}    2.07{col 57}{space 3}0.039{col 65}{space 4} 1.069545{col 78}{space 3} 13.07789
+{txt}{space 7}12-mo post SAFE  {c |}{col 25}{res}{space 2}  4.92541{col 37}{space 2} 3.735683{col 48}{space 1}    2.10{col 57}{space 3}0.036{col 65}{space 4} 1.113904{col 78}{space 3} 21.77896
+{txt}{space 23} {c |}
+{space 18}_cons {c |}{col 25}{res}{space 2} 4.742191{col 37}{space 2} 4.146442{col 48}{space 1}    1.78{col 57}{space 3}0.075{col 65}{space 4} .8544992{col 78}{space 3} 26.31761
+{txt}{hline 24}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}{res}hospital               {col 25}{txt}{c |}
+{space 14}var(_cons){c |}{col 25}{res}{space 2} 3.327337{col 37}{space 2} 2.372389{col 65}{space 4} .8226038{col 78}{space 3} 13.45869
+{txt}{hline 24}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}{res}hospital>anesthetist_id{col 25}{txt}{c |}
+{space 14}var(_cons){c |}{col 25}{res}{space 2} 3.86e-33{col 37}{space 2} 5.05e-17{col 65}{space 4}        .{col 78}{space 3}        .
+{txt}{hline 24}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{p 0 6 2}Note: {help eform_option:Estimates are transformed} only in the first equation.{p_end}
+{p 0 6 2}Note: {res:_cons} estimates baseline odds (conditional on zero random effects){txt}.{p_end}
+{txt}LR test vs. logistic model: {txt}{help j_chibar##|_new:chibar2(01) =}{res} 70.65{col 55}{txt}Prob >= chibar2 = {res}{col 73}0.0000
+
+{txt}{hline 13}{c TT}{hline 61}
+       phase {c |}  Odds Ratio       chi2       P>chi2     [95% Conf. Interval]
+{hline 13}{c +}{hline 61}
+{col 5}Pre-SAFE {c |}  {res}{col 6}  1.000000{col 31}      .{col 45}    .{col 55}         .{col 66}         .
+{txt}{col 4}Immedia~E {c |}  {res}{col 6}  2.571429{col 31}   4.19{col 45}0.0406{col 55}  1.006365{col 66}  6.570425
+{txt}{col 4}6 month~E {c |}  {res}{col 6}  1.175958{col 31}   0.17{col 45}0.6787{col 55}  0.545680{col 66}  2.534227
+{txt}{col 4}12-mo p~E {c |}  {res}{col 6}  1.668293{col 31}   0.90{col 45}0.3432{col 55}  0.572254{col 66}  4.863574
+{txt}{hline 13}{c BT}{hline 61}
+Test of homogeneity (equal odds): chi2({res}3{txt})  = {res}    4.58
+                                  {txt}Pr>chi2  = {res}  0.2055
+
+{txt}Score test for trend of odds:     chi2({res}1{txt})  = {res}    0.42
+                                  {txt}Pr>chi2  = {res}  0.5151
+{txt}
+Fitting fixed-effects model:
+
+Iteration 0:{space 3}log likelihood = {res:-126.42026}  
+Iteration 1:{space 3}log likelihood = {res: -125.7608}  
+Iteration 2:{space 3}log likelihood = {res: -125.7596}  
+Iteration 3:{space 3}log likelihood = {res: -125.7596}  
+
+Refining starting values:
+
+Grid node 0:{space 3}log likelihood = {res:-122.98799}
+
+Fitting full model:
+{res}
+{txt}Iteration 0:{space 3}log likelihood = {res:-122.98799}  (not concave)
+Iteration 1:{space 3}log likelihood = {res:-121.80071}  
+Iteration 2:{space 3}log likelihood = {res:-121.14223}  (backed up)
+Iteration 3:{space 3}log likelihood = {res:-119.97378}  
+Iteration 4:{space 3}log likelihood = {res:-119.63382}  
+Iteration 5:{space 3}log likelihood = {res:-119.62709}  
+Iteration 6:{space 3}log likelihood = {res:-119.62707}  
+Iteration 7:{space 3}log likelihood = {res:-119.62707}  
+{res}
+{txt}Mixed-effects logistic regression{col 49}{txt}Number of obs{col 67}={res}{col 69}       320
+
+{txt}{hline 16}{c TT}{hline 44}
+{col 17}{txt}{c |}{col 23}No. of{col 36}Observations per Group
+{col 2}{txt}Group Variable{col 17}{c |}{col 23}Groups{col 33}Minimum{col 44}Average{col 55}Maximum
+{txt}{hline 16}{c +}{hline 44}
+{col 8}{res}hospital{col 17}{txt}{c |}{res}{col 21}       5{col 31}       33{col 42}     64.0{col 53}      146
+{col 4}{res}anesthetis~d{col 17}{txt}{c |}{res}{col 21}      35{col 31}        1{col 42}      9.1{col 53}       31
+{txt}{hline 16}{c BT}{hline 44}
+
+{txt}Integration method: {col 21}{res}mvaghermite{col 49}{txt}Integration pts.{col 67}={col 78}{res}7
+
+{col 49}{txt}Wald chi2({res}3{txt}){col 67}={res}{col 70}     5.75
+{txt}Log likelihood = {res}-119.62707{col 49}{txt}Prob > chi2{col 67}={res}{col 73}0.1244
+{txt}{hline 24}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}   equipment_airway___7{col 25}{c |} Odds Ratio{col 37}   Std. Err.{col 49}      z{col 57}   P>|z|{col 65}     [95% Con{col 78}f. Interval]
+{hline 24}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 18}phase {c |}
+{space 14}Pre-SAFE  {c |}{col 25}{res}{space 2}        1{col 37}{txt}  (base)
+{space 1}Immediately post SAFE  {c |}{col 25}{res}{space 2} 3.444713{col 37}{space 2} 1.812945{col 48}{space 1}    2.35{col 57}{space 3}0.019{col 65}{space 4} 1.227913{col 78}{space 3} 9.663594
+{txt}{space 4}6 months post SAFE  {c |}{col 25}{res}{space 2} 1.945939{col 37}{space 2} .8906659{col 48}{space 1}    1.45{col 57}{space 3}0.146{col 65}{space 4} .7934691{col 78}{space 3} 4.772307
+{txt}{space 7}12-mo post SAFE  {c |}{col 25}{res}{space 2} 1.744933{col 37}{space 2} 1.053293{col 48}{space 1}    0.92{col 57}{space 3}0.356{col 65}{space 4} .5345252{col 78}{space 3} 5.696253
+{txt}{space 23} {c |}
+{space 18}_cons {c |}{col 25}{res}{space 2} 6.894995{col 37}{space 2}  3.47962{col 48}{space 1}    3.83{col 57}{space 3}0.000{col 65}{space 4} 2.564293{col 78}{space 3}  18.5396
+{txt}{hline 24}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}{res}hospital               {col 25}{txt}{c |}
+{space 14}var(_cons){c |}{col 25}{res}{space 2} .6244076{col 37}{space 2}  .572398{col 65}{space 4}  .103554{col 78}{space 3} 3.765039
+{txt}{hline 24}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}{res}hospital>anesthetist_id{col 25}{txt}{c |}
+{space 14}var(_cons){c |}{col 25}{res}{space 2} .1808448{col 37}{space 2} .3092777{col 65}{space 4} .0063328{col 78}{space 3}  5.16436
+{txt}{hline 24}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{p 0 6 2}Note: {help eform_option:Estimates are transformed} only in the first equation.{p_end}
+{p 0 6 2}Note: {res:_cons} estimates baseline odds (conditional on zero random effects){txt}.{p_end}
+{txt}LR test vs. logistic model: {txt}chi2({res}2{txt}) ={res} 12.27{col 59}{txt}Prob > chi2 ={res}{col 73}0.0022
+
+{txt}{p 0 6 4 79}Note: {help j_mixedlr##|_new:LR test is conservative} and provided only for reference.{p_end}
+
+{hline 13}{c TT}{hline 61}
+       phase {c |}  Odds Ratio       chi2       P>chi2     [95% Conf. Interval]
+{hline 13}{c +}{hline 61}
+{col 5}Pre-SAFE {c |}  {res}{col 6}  1.000000{col 31}      .{col 45}    .{col 55}         .{col 66}         .
+{txt}{col 4}Immedia~E {c |}  {res}{col 6}  4.302198{col 31}   3.90{col 45}0.0484{col 55}  0.885511{col 66} 20.901947
+{txt}{col 4}6 month~E {c |}  {res}{col 6}  1.001374{col 31}   0.00{col 45}0.9979{col 55}  0.368026{col 66}  2.724672
+{txt}{col 4}12-mo p~E {c |}  {res}{col 6}  4.153846{col 31}   2.05{col 45}0.1527{col 55}  0.498200{col 66} 34.633563
+{txt}{hline 13}{c BT}{hline 61}
+Test of homogeneity (equal odds): chi2({res}3{txt})  = {res}    5.99
+                                  {txt}Pr>chi2  = {res}  0.1120
+
+{txt}Score test for trend of odds:     chi2({res}1{txt})  = {res}    0.92
+                                  {txt}Pr>chi2  = {res}  0.3381
+{txt}
+Fitting fixed-effects model:
+
+Iteration 0:{space 3}log likelihood = {res:-77.255339}  
+Iteration 1:{space 3}log likelihood = {res:-71.643195}  
+Iteration 2:{space 3}log likelihood = {res:-71.452479}  
+Iteration 3:{space 3}log likelihood = {res:-71.451464}  
+Iteration 4:{space 3}log likelihood = {res:-71.451464}  
+
+Refining starting values:
+
+Grid node 0:{space 3}log likelihood = {res:-57.740538}
+
+Fitting full model:
+{res}
+{txt}Iteration 0:{space 3}log likelihood = {res:-57.740538}  
+Iteration 1:{space 3}log likelihood = {res:-54.423642}  
+Iteration 2:{space 3}log likelihood = {res:-53.543047}  
+Iteration 3:{space 3}log likelihood = {res:-53.279577}  
+Iteration 4:{space 3}log likelihood = {res:-53.231737}  
+Iteration 5:{space 3}log likelihood = {res:-53.229703}  
+Iteration 6:{space 3}log likelihood = {res:-53.229639}  
+Iteration 7:{space 3}log likelihood = {res:-53.229636}  
+{res}
+{txt}Mixed-effects logistic regression{col 49}{txt}Number of obs{col 67}={res}{col 69}       320
+
+{txt}{hline 16}{c TT}{hline 44}
+{col 17}{txt}{c |}{col 23}No. of{col 36}Observations per Group
+{col 2}{txt}Group Variable{col 17}{c |}{col 23}Groups{col 33}Minimum{col 44}Average{col 55}Maximum
+{txt}{hline 16}{c +}{hline 44}
+{col 8}{res}hospital{col 17}{txt}{c |}{res}{col 21}       5{col 31}       33{col 42}     64.0{col 53}      146
+{col 4}{res}anesthetis~d{col 17}{txt}{c |}{res}{col 21}      35{col 31}        1{col 42}      9.1{col 53}       31
+{txt}{hline 16}{c BT}{hline 44}
+
+{txt}Integration method: {col 21}{res}mvaghermite{col 49}{txt}Integration pts.{col 67}={col 78}{res}7
+
+{col 49}{txt}Wald chi2({res}3{txt}){col 67}={res}{col 70}     9.34
+{txt}Log likelihood = {res}-53.229636{col 49}{txt}Prob > chi2{col 67}={res}{col 73}0.0251
+{txt}{hline 24}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}    equipment_drugs___3{col 25}{c |} Odds Ratio{col 37}   Std. Err.{col 49}      z{col 57}   P>|z|{col 65}     [95% Con{col 78}f. Interval]
+{hline 24}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 18}phase {c |}
+{space 14}Pre-SAFE  {c |}{col 25}{res}{space 2}        1{col 37}{txt}  (base)
+{space 1}Immediately post SAFE  {c |}{col 25}{res}{space 2} 11.28945{col 37}{space 2} 13.00512{col 48}{space 1}    2.10{col 57}{space 3}0.035{col 65}{space 4} 1.180628{col 78}{space 3} 107.9524
+{txt}{space 4}6 months post SAFE  {c |}{col 25}{res}{space 2} 1.340593{col 37}{space 2} 1.384669{col 48}{space 1}    0.28{col 57}{space 3}0.777{col 65}{space 4} .1770556{col 78}{space 3} 10.15042
+{txt}{space 7}12-mo post SAFE  {c |}{col 25}{res}{space 2} 71.39249{col 37}{space 2} 140.5235{col 48}{space 1}    2.17{col 57}{space 3}0.030{col 65}{space 4} 1.507345{col 78}{space 3} 3381.366
+{txt}{space 23} {c |}
+{space 18}_cons {c |}{col 25}{res}{space 2} 82.27309{col 37}{space 2} 155.3661{col 48}{space 1}    2.34{col 57}{space 3}0.020{col 65}{space 4} 2.031572{col 78}{space 3} 3331.834
+{txt}{hline 24}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}{res}hospital               {col 25}{txt}{c |}
+{space 14}var(_cons){c |}{col 25}{res}{space 2} 9.830837{col 37}{space 2} 11.37885{col 65}{space 4} 1.017078{col 78}{space 3} 95.02256
+{txt}{hline 24}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}{res}hospital>anesthetist_id{col 25}{txt}{c |}
+{space 14}var(_cons){c |}{col 25}{res}{space 2} 5.446932{col 37}{space 2} 4.851387{col 65}{space 4} .9506426{col 78}{space 3} 31.20949
+{txt}{hline 24}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{p 0 6 2}Note: {help eform_option:Estimates are transformed} only in the first equation.{p_end}
+{p 0 6 2}Note: {res:_cons} estimates baseline odds (conditional on zero random effects){txt}.{p_end}
+{txt}LR test vs. logistic model: {txt}chi2({res}2{txt}) ={res} 36.44{col 59}{txt}Prob > chi2 ={res}{col 73}0.0000
+
+{txt}{p 0 6 4 79}Note: {help j_mixedlr##|_new:LR test is conservative} and provided only for reference.{p_end}
+
+{hline 13}{c TT}{hline 61}
+       phase {c |}  Odds Ratio       chi2       P>chi2     [95% Conf. Interval]
+{hline 13}{c +}{hline 61}
+{col 5}Pre-SAFE {c |}  {res}{col 6}  1.000000{col 31}      .{col 45}    .{col 55}         .{col 66}         .
+{txt}{col 4}Immedia~E {c |}  {res}{col 6}  5.512605{col 31}  16.66{col 45}0.0000{col 55}  2.190507{col 66} 13.872961
+{txt}{col 4}6 month~E {c |}  {res}{col 6} 13.490196{col 31}  25.44{col 45}0.0000{col 55}  3.598831{col 66} 50.567922
+{txt}{col 4}12-mo p~E {c |}  {res}{col 6}         .{col 31}  17.60{col 45}0.0000{col 55}         .{col 66}         .
+{txt}{hline 13}{c BT}{hline 61}
+Test of homogeneity (equal odds): chi2({res}3{txt})  = {res}   47.30
+                                  {txt}Pr>chi2  = {res}  0.0000
+
+{txt}Score test for trend of odds:     chi2({res}1{txt})  = {res}   32.50
+                                  {txt}Pr>chi2  = {res}  0.0000
+{txt}note: 5.phase != 0 predicts success perfectly
+      5.phase dropped and 43 obs not used
+
+
+Fitting fixed-effects model:
+
+Iteration 0:{space 3}log likelihood = {res:-103.43838}  
+Iteration 1:{space 3}log likelihood = {res:-100.30288}  
+Iteration 2:{space 3}log likelihood = {res:-100.23983}  
+Iteration 3:{space 3}log likelihood = {res:-100.23977}  
+Iteration 4:{space 3}log likelihood = {res:-100.23977}  
+
+Refining starting values:
+
+Grid node 0:{space 3}log likelihood = {res:-84.813318}
+
+Fitting full model:
+{res}
+{txt}Iteration 0:{space 3}log likelihood = {res:-84.813318}  
+Iteration 1:{space 3}log likelihood = {res:-83.969227}  
+Iteration 2:{space 3}log likelihood = {res:-83.141873}  
+Iteration 3:{space 3}log likelihood = {res:-82.991412}  
+Iteration 4:{space 3}log likelihood = {res:-82.984757}  
+Iteration 5:{space 3}log likelihood = {res: -82.98472}  
+Iteration 6:{space 3}log likelihood = {res: -82.98472}  
+{res}
+{txt}Mixed-effects logistic regression{col 49}{txt}Number of obs{col 67}={res}{col 69}       277
+
+{txt}{hline 16}{c TT}{hline 44}
+{col 17}{txt}{c |}{col 23}No. of{col 36}Observations per Group
+{col 2}{txt}Group Variable{col 17}{c |}{col 23}Groups{col 33}Minimum{col 44}Average{col 55}Maximum
+{txt}{hline 16}{c +}{hline 44}
+{col 8}{res}hospital{col 17}{txt}{c |}{res}{col 21}       5{col 31}       25{col 42}     55.4{col 53}      130
+{col 4}{res}anesthetis~d{col 17}{txt}{c |}{res}{col 21}      35{col 31}        1{col 42}      7.9{col 53}       25
+{txt}{hline 16}{c BT}{hline 44}
+
+{txt}Integration method: {col 21}{res}mvaghermite{col 49}{txt}Integration pts.{col 67}={col 78}{res}7
+
+{col 49}{txt}Wald chi2({res}2{txt}){col 67}={res}{col 70}    20.74
+{txt}Log likelihood = {res} -82.98472{col 49}{txt}Prob > chi2{col 67}={res}{col 73}0.0000
+{txt}{hline 24}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}    equipment_drugs___6{col 25}{c |} Odds Ratio{col 37}   Std. Err.{col 49}      z{col 57}   P>|z|{col 65}     [95% Con{col 78}f. Interval]
+{hline 24}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 18}phase {c |}
+{space 14}Pre-SAFE  {c |}{col 25}{res}{space 2}        1{col 37}{txt}  (base)
+{space 1}Immediately post SAFE  {c |}{col 25}{res}{space 2} 7.407254{col 37}{space 2} 4.345678{col 48}{space 1}    3.41{col 57}{space 3}0.001{col 65}{space 4} 2.345716{col 78}{space 3} 23.39047
+{txt}{space 4}6 months post SAFE  {c |}{col 25}{res}{space 2}  22.7926{col 37}{space 2}  17.5543{col 48}{space 1}    4.06{col 57}{space 3}0.000{col 65}{space 4} 5.037548{col 78}{space 3} 103.1261
+{txt}{space 7}12-mo post SAFE  {c |}{col 25}{res}{space 2}        1{col 37}{txt}  (empty)
+{space 23} {c |}
+{space 18}_cons {c |}{col 25}{res}{space 2}  2.50903{col 37}{space 2} 2.032183{col 48}{space 1}    1.14{col 57}{space 3}0.256{col 65}{space 4} .5129526{col 78}{space 3} 12.27254
+{txt}{hline 24}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}{res}hospital               {col 25}{txt}{c |}
+{space 14}var(_cons){c |}{col 25}{res}{space 2} 2.615799{col 37}{space 2} 2.078816{col 65}{space 4} .5509869{col 78}{space 3} 12.41845
+{txt}{hline 24}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}{res}hospital>anesthetist_id{col 25}{txt}{c |}
+{space 14}var(_cons){c |}{col 25}{res}{space 2} .3419612{col 37}{space 2}  .559489{col 65}{space 4} .0138456{col 78}{space 3} 8.445847
+{txt}{hline 24}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{p 0 6 2}Note: {help eform_option:Estimates are transformed} only in the first equation.{p_end}
+{p 0 6 2}Note: {res:_cons} estimates baseline odds (conditional on zero random effects){txt}.{p_end}
+{txt}LR test vs. logistic model: {txt}chi2({res}2{txt}) ={res} 34.51{col 59}{txt}Prob > chi2 ={res}{col 73}0.0000
+
+{txt}{p 0 6 4 79}Note: {help j_mixedlr##|_new:LR test is conservative} and provided only for reference.{p_end}
+
+{com}. 
+{txt}end of do-file
+
+{com}. log close
+      {txt}name:  {res}<unnamed>
+       {txt}log:  {res}C:\Users\tyler\Downloads\SAFE\equipment odds ratio.smcl
+  {txt}log type:  {res}smcl
+ {txt}closed on:  {res}20 Sep 2021, 10:07:11
+{txt}{.-}
+{smcl}
+{txt}{sf}{ul off}{smcl}
+{com}{sf}{ul off}{txt}{.-}
+      name:  {res}<unnamed>
+       {txt}log:  {res}C:\Users\tyler\Downloads\SAFE\equipment odds ratio.smcl
+  {txt}log type:  {res}smcl
+ {txt}opened on:  {res}20 Sep 2021, 11:16:50
+
+{com}. log off
+      {txt}name:  {res}<unnamed>
+       {txt}log:  {res}C:\Users\tyler\Downloads\SAFE\equipment odds ratio.smcl
+  {txt}log type:  {res}smcl
+ {txt}paused on:  {res}20 Sep 2021, 11:17:00
+{txt}{.-}
+{smcl}
+{txt}{sf}{ul off}
