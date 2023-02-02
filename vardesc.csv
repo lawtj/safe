@@ -27,4 +27,8 @@ spinal_oxytocin,Administers oxytocin
 spinal_oxytocintime,Oxytocin administered at correct time
 spinal_present,Remains present in theatre
 prep_neonatal,Confirms neonatal equipment available
+adverse_failed_spinal,Failed spinal (inadequate block)
+adverse_loc,Loss of consciousness
+adverse_hypoxia,Prolonged hypoxia
 adverse_persistent_hypo,Persistent hypotension
+adverse_major_hemorrhage,Major haemorrhage
