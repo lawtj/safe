@@ -941,35 +941,6 @@ program define comparetab_unrecodedvars
 	syntax varlist using[, replace append ]
 	tempname fh
 	file open `fh' `using', write `replace' `append'
-	file write `fh' "variable" _tab ///
-	"label" _tab ///
-	"chi2" _tab ///
-	"p_value" _tab  ///
-	"exact" _tab  ///
-	"or_immediate" _tab  ///
-	"OR6" _tab  ///
-	"OR12" _tab  ///
-	"p_imm" _tab  ///
-	"p_6" _tab  ///
-	"p12" _tab  ///
-	"lci_imm" _tab  ///
-	"lci6" _tab  ///
-	"lci12" _tab  ///
-	"uci_imm" _tab  ///
-	"uci6" _tab  ///
-	"uci12" _tab  ///
-	"adj_or_immediate" _tab  ///
-	"adj_OR6" _tab  ///
-	"adj_OR12" _tab  ///
-	"adj_p_imm" _tab  ///
-	"adj_p_6" _tab  ///
-	"adj_p12" _tab  ///
-	"adj_lci_imm" _tab  ///
-	"adj_lci6" _tab  ///
-	"adj_lci12" _tab  ///
-	"adj_uci_imm" _tab  ///
-	"adj_uci6" _tab  ///
-	"adj_uci12" _tab
 	foreach i of local varlist{
 		di "checking `i'"
 		quietly tabulate `i' phase2, chi2 expected exact matcell(o)
