@@ -27,8 +27,8 @@ spinal_oxytocin	Administers oxytocin	1.7884032		.49908982
 spinal_oxytocintime	Oxytocin administered at correct time (when umbilical cord clamped)	.22868934	.63249737		
 spinal_present	Participant present in theatre throughout the case	.02291776	.87967114		
 prep_neonatal	checks prep_neonatal	4.9097528		.03743455	7.6521698	7.6521698	1	.05744301	.05744301	.	.93771656	.93771656	.	62.444991	62.444991	.	22.635252	7.0648512	47726700	.08179338	.17037666	.99328878	.67462313	.43174908	0	759.4679	115.60447	.	
-adverse_failed_spinal	Failed spinal (no block or inadequate block requiring supplementary anaesthesia)	.05248435	.81879536		
-adverse_loc	Loss of consciousness/unresponsive	.5373585		.47056686	
-adverse_hypoxia	Hypoxia (SpO2 < 90% for >2 minutes)	.34858403		1	
-adverse_persistent_hypo	Persistent hypotension (SBP>20% below baseline or < 80mmHg for >10 mins)	8.2351824	.0041086		2.9615384	.47279553	.51692309	.00492762	.02333384	.08369089	1.3894341	.24747004	.24473424	6.3124334	.90328352	1.0918353	3.7746307	.6954	.33342806	.0101352	.42767265	.05034828	1.3713043	.28339595	.11098906	10.389989	1.7063799	1.0016688	
-adverse_major_hemorrhage	Major haemorrhage (Quantitatively >1L blood loss or major haemorrhage being decl	.7646356		1	
+adverse_failed_spinal	Failed spinal (no block or inadequate block requiring supplementary anaesthesia)	2.9474121	.0860152		
+adverse_loc	Loss of consciousness/unresponsive	.00687046		1	
+adverse_hypoxia	Hypoxia (SpO2 < 90% for >2 minutes)	2.3020123		.21606448	
+adverse_persistent_hypo	Persistent hypotension (SBP>20% below baseline or < 80mmHg for >10 mins)	.12364806	.72511107		
+adverse_major_hemorrhage	Major haemorrhage (Quantitatively >1L blood loss or major haemorrhage being decl	1.7990374		.49904312	
